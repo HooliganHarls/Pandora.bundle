@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site site="http://www.pandora.com"
+	    plugin="https://www.pandora.com:443/radio/tuner"
+			initialState="playing"
+			version="1.0">
+			
+	<crop x="203" y="117" width="406" height="196" />
+	<!--<crop x="0" y="100" width="0" height="0" /> -->
+	
+	<!-- PLAYING -->
+	<state name="playing">
+		<event>
+			<condition>
+				<command name="pause" />
+			</condition>
+			<action>
+				<click x="530" y="100" />
+				<click x="530" y="100" />
+			</action>
+		</event>
+		<event>
+			<condition>
+				<color x="530" y="100" rgb="ff9900"/>
+			</condition>
+			<action>
+				<goto state="paused"/>
+			</action>
+		</event>
+
+		<!-- Skip Track -->
+		<event>
+			<condition>
+				<command name="smallstep+" />
+			</condition>
+			<action>
+				<click x="565" y="100" />
+				<click x="565" y="100" />
+			</action>
+		</event>
+		
+		<!-- Rate track good -->
+		<event>
+			<condition>
+				<command name="bigstep+" />
+			</condition>
+			<action>
+				<click x="580" y="300" />
+				<click x="580" y="300" />
+			</action>
+		</event>
+		
+		<!-- Rate track bad -->
+		<event>
+			<condition>
+				<command name="bigstep-" />
+			</condition>
+			<action>
+				<click x="498" y="300" />
+				<click x="498" y="300" />
+			</action>
+		</event>
+		
+	</state>
+			
+	<!-- PAUSED -->
+	<state name="paused">
+		<event>
+			<condition>
+				<command name="play" />
+			</condition>
+			<action>
+				<click x="573" y="90" />
+				<click x="573" y="90" />
+			</action>
+		</event>
+		<event>
+			<condition>
+				<color x="568" y="90" rgb="ff9900"/>
+			</condition>
+			<action>
+				<goto state="playing"/>
+			</action>
+		</event>
+	</state>
+</site>
