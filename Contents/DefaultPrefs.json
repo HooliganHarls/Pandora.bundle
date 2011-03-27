@@ -1,0 +1,15 @@
+[
+  {
+      "id": "pan_user",
+      "type": "text",
+      "label": "Username",
+      "default": "" 
+  },
+  {
+      "id": "pan_pass",
+      "type": "text",
+      "label": "Password",
+      "default": "",
+      "option": "hidden" 
+  }
+]
